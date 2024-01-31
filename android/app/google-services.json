@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "53538905718",
+    "project_id": "speech-to-terms",
+    "storage_bucket": "speech-to-terms.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:53538905718:android:2f4cf812eddee9c8afc957",
+        "android_client_info": {
+          "package_name": "com.example.speech_to_terms"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA08hW6BAK3mAOvgHVmYeE44YthcWgicL0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
