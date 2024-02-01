@@ -6,7 +6,7 @@ abstract class TermsAndConditionsState {}
 class TermsAndConditionsInitial extends TermsAndConditionsState {}
 
 class DisplayTermsAndConditionsList extends TermsAndConditionsState {
-  final List<TermsAndCondition> termsAndConditionsList;
+  final List<TermsModel> termsAndConditionsList;
 
   DisplayTermsAndConditionsList(this.termsAndConditionsList);
 }

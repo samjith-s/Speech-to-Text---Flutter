@@ -4,9 +4,9 @@ import 'package:speech_to_terms/modules/terms_listing/data/models/terms_n_condit
 import 'package:speech_to_terms/utils/widgets/custom_progress_indicator.dart';
 
 class TermsAndConditionsCard extends StatefulWidget {
-  final TermsAndCondition termsAndCondition;
-  final ValueChanged<TermsAndCondition> onEdit;
-  final ValueChanged<TermsAndCondition> onDelete;
+  final TermsModel termsAndCondition;
+  final ValueChanged<TermsModel> onEdit;
+  final ValueChanged<TermsModel> onDelete;
 
   const TermsAndConditionsCard({
     super.key,
@@ -69,7 +69,7 @@ class _TermsAndConditionsCardState extends State<TermsAndConditionsCard> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    widget.termsAndCondition.data,
+                    widget.termsAndCondition.body,
                   ),
                   if (hindiText.isNotEmpty)
                     Padding(
@@ -87,7 +87,7 @@ class _TermsAndConditionsCardState extends State<TermsAndConditionsCard> {
                         } else {
                           //Todo: Initially this will take a while to download the model, This has to be managed
                           CustomProgressIndicator(context).showLoadingIndicator();
-                          hindiText = await onDeviceTranslator.translateText(widget.termsAndCondition.data);
+                          hindiText = await onDeviceTranslator.translateText(widget.termsAndCondition.body);
                           if (mounted) {
                             CustomProgressIndicator(context).hideLoadingIndicator();
                           }

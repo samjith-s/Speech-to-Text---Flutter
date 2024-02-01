@@ -13,7 +13,7 @@ class TermsNConditionsRepository extends ITermsNConditionsRepository {
   TermsNConditionsRepository(this._termsAndConditionsAPI);
 
   @override
-  Future<Either<AppErrorModel, List<TermsAndCondition>>> fetchInitialPageTerms() {
+  Future<Either<AppErrorModel, List<TermsModel>>> fetchInitialPageTerms() {
     return _termsAndConditionsAPI.fetchInitialPageTerms();
   }
 

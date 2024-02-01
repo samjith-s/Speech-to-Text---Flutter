@@ -15,7 +15,7 @@ class TermsNConditionsListingScreen extends StatefulWidget {
 }
 
 class _TermsNConditionsListingScreenState extends State<TermsNConditionsListingScreen> {
-  List<TermsAndCondition> termsNConditionsList = [];
+  List<TermsModel> termsNConditionsList = [];
   late bool screenLoading;
   late bool displayPaginationLoading;
   late ScrollController _scrollController;
@@ -114,32 +114,32 @@ class _TermsNConditionsListingScreenState extends State<TermsNConditionsListingS
                                 return TermsAndConditionsCard(
                                   termsAndCondition: termsNConditionsList[index],
                                   onDelete: (termsAndCondition) {
-                                    BlocProvider.of<TermsAndConditionsBloc>(context).add(
-                                      DeleteTermsBtnTapped(termsAndCondition.id!),
-                                    );
+                                    // BlocProvider.of<TermsAndConditionsBloc>(context).add(
+                                    //   DeleteTermsBtnTapped(termsAndCondition.id!),
+                                    // );
                                   },
                                   onEdit: (termsAndCondition) {
-                                    showModalBottomSheet(
-                                      context: context,
-                                      isScrollControlled: true,
-                                      shape: const RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.only(
-                                          topLeft: Radius.circular(30.0),
-                                          topRight: Radius.circular(30.0),
-                                        ),
-                                      ),
-                                      builder: (context) {
-                                        return AddOrEditTermsBottomSheet(
-                                          isEdit: true,
-                                          termsAndCondition: termsAndCondition,
-                                          onSubmitTapped: (String data) {
-                                            BlocProvider.of<TermsAndConditionsBloc>(context).add(
-                                              EditTermsBtnTapped(data, termsAndCondition.id!),
-                                            );
-                                          },
-                                        );
-                                      },
-                                    );
+                                    // showModalBottomSheet(
+                                    //   context: context,
+                                    //   isScrollControlled: true,
+                                    //   shape: const RoundedRectangleBorder(
+                                    //     borderRadius: BorderRadius.only(
+                                    //       topLeft: Radius.circular(30.0),
+                                    //       topRight: Radius.circular(30.0),
+                                    //     ),
+                                    //   ),
+                                    //   builder: (context) {
+                                    //     return AddOrEditTermsBottomSheet(
+                                    //       isEdit: true,
+                                    //       termsAndCondition: termsAndCondition,
+                                    //       onSubmitTapped: (String data) {
+                                    //         BlocProvider.of<TermsAndConditionsBloc>(context).add(
+                                    //           EditTermsBtnTapped(data, termsAndCondition.id!),
+                                    //         );
+                                    //       },
+                                    //     );
+                                    //   },
+                                    // );
                                   },
                                 );
                               },

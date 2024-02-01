@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-const _kId = "id";
+// const _kId = "id";
 const _kData = "data";
 const _kCreatedAt = "created_at";
 
@@ -26,4 +26,32 @@ class TermsAndCondition {
         _kData: data,
         _kCreatedAt: createdAt,
       };
+}
+
+const _kUserId = "userId";
+const _kId = "id";
+const _kTitle = "title";
+const _kBody = "body";
+
+class TermsModel {
+  final int userId;
+  final int id;
+  final String title;
+  final String body;
+
+  TermsModel({
+    required this.userId,
+    required this.id,
+    required this.title,
+    required this.body,
+  });
+
+  factory TermsModel.fromJson(Map<String, dynamic> json) {
+    return TermsModel(
+      userId: json[_kUserId],
+      id: json[_kId],
+      title: json[_kTitle],
+      body: json[_kBody],
+    );
+  }
 }
